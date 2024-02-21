@@ -1,0 +1,34 @@
+departments
+--
+dept_no PK str
+dept_name str
+
+dept_emp
+--
+emp_no PK int FK - employees.emp_no
+dept_no PK str FK >- departments.dept_no
+
+dept_manager
+--
+dept_no str FK >- departments.dept_no
+emp_no PK int FK - employees.emp_no
+
+employees
+--
+emp_no PK int
+emp_title_id str FK >- titles.title_id
+birth_date dateTime
+first_name str
+last_name str
+sex str
+hire_date dateTime
+
+salaries
+--
+emp_no PK int FK - employees.emp_no
+salary int
+
+titles
+--
+title_id PK str
+title str
