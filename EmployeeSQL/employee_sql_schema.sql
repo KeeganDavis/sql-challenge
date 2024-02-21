@@ -13,29 +13,35 @@ CREATE TABLE titles (
 -- Create employees table
 CREATE TABLE employees (
     emp_no INT PRIMARY KEY,
-    emp_title_id VARCHAR(6) REFERENCES titles(title_id),
+    emp_title_id VARCHAR(6),
     birth_date DATE NOT NULL,
-    first_name VARCHAR(15) NOT NULL,
-    last_name VARCHAR(15) NOT NULL,
+    first_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
     sex CHAR(1) NOT NULL,
-    hire_date DATE NOT NULL
-);
-
--- Create dept_emp table
-CREATE TABLE dept_emp (
-    emp_no INT REFERENCES employees(emp_no),
-    dept_no VARCHAR(5) REFERENCES departments(dept_no),
-    PRIMARY KEY (emp_no, dept_no)
-);
-
--- Create dept_manager table
-CREATE TABLE dept_manager (
-    emp_no INT PRIMARY KEY REFERENCES employees(emp_no),
-    dept_no VARCHAR(5) NOT NULL REFERENCES departments(dept_no)
+    hire_date DATE NOT NULL,
+	FOREIGN KEY (emp_title_id) REFERENCES titles(title_id)
 );
 
 -- Create salaries table
 CREATE TABLE salaries (
-    emp_no INT PRIMARY KEY REFERENCES employees(emp_no),
-    salary INT NOT NULL
+    emp_no INT PRIMARY KEY,
+    salary INT NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
+);
+
+-- Create dept_emp table
+CREATE TABLE dept_emp (
+    emp_no INT,
+    dept_no VARCHAR(5),
+    PRIMARY KEY (emp_no, dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+);
+
+-- Create dept_manager table
+CREATE TABLE dept_manager (
+    dept_no VARCHAR(5) NOT NULL,
+    emp_no INT PRIMARY KEY,
+    FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );

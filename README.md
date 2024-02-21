@@ -1,3 +1,3 @@
 # sql-challenge
-remember to add not null to all primary keys
-adjust relationships for one to many, etc.
+-extract year from date types (https://stackoverflow.com/questions/36203613/how-to-extract-year-from-date-in-postgresql) \
+-
