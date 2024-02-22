@@ -5,7 +5,7 @@ dept_name str
 
 dept_emp
 --
-emp_no PK int FK - employees.emp_no
+emp_no PK int FK >- employees.emp_no
 dept_no PK str FK >- departments.dept_no
 
 dept_manager
