@@ -13,7 +13,7 @@ CREATE TABLE titles (
 -- Create employees table
 CREATE TABLE employees (
     emp_no INT PRIMARY KEY,
-    emp_title_id VARCHAR(6),
+    emp_title_id VARCHAR(6) NOT NULL,
     birth_date DATE NOT NULL,
     first_name VARCHAR(25) NOT NULL,
     last_name VARCHAR(25) NOT NULL,
