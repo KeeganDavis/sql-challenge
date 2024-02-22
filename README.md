@@ -8,4 +8,4 @@ Clone the repository: git@github.com:KeeganDavis/sql-challenge.git
 ## Usage
 Run the employee_sql_schema.sql file in pgAdmin4 to create the tables and import the CSV files into the tables in the order they were created in the schema. Run each query separately in the employee_sql_queries.sql file in pgAdmin4 to filter the data to show only the information based on the constraints in the comment above the query. Select a kernel in the employeessql.ipynb file and then run all code blocks to confirm the columns only have unique values and can be used as primary keys or if a composite key is needed.
 ## Code Sources
--extract year from date types (https://stackoverflow.com/questions/36203613/how-to-extract-year-from-date-in-postgresql) \
+-extract year from date types (https://stackoverflow.com/questions/36203613/how-to-extract-year-from-date-in-postgresql)
